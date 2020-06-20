@@ -2,7 +2,10 @@ import pygame
 pygame.init()
 
 # BACKGROUND
-bg = pygame.image.load('spaceBG.jpg')
+bg = pygame.image.load('space.jpg')
+
+# Player model
+char = pygame.image.load('bgbattleship.png')
 
 
 def main():
@@ -11,7 +14,7 @@ def main():
     screenWidth = 500
     screenHeight = 600
     displayWindow = pygame.display.set_mode((screenWidth, screenHeight))
-    pygame.display.set_caption("First Game")
+    pygame.display.set_caption("SPACE BATTLE")
     fpsClock = pygame.time.Clock()
     x = 50
     y = 50
@@ -41,7 +44,7 @@ def main():
                 y += speed
 
         displayWindow.blit(bg, (0, 0))
-        pygame.draw.rect(displayWindow, (255, 0, 0), (x, y, width, height))
+        displayWindow.blit(char, (x, y))
         pygame.display.update()
         fpsClock.tick(fps)
 

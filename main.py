@@ -1,9 +1,12 @@
 import pygame
+from pygame import mixer
 pygame.init()
 
 # BACKGROUND
 bg = pygame.image.load('space.jpg')
-
+# BG MUSIC
+mixer.music.load('found.mp3')
+mixer.music.play(-1)
 # Player model
 char = pygame.image.load('bgbattleship.png')
 
